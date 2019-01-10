@@ -10,14 +10,13 @@ class Song
  attr_accessor :name, :artist, :genre
   
   def initialize(name, artist, genre)
-    binding.pry
+  
     @name = name
     @artist = artist
     @@artists << artist
-    @@artist_count[artist] += 1
     @genre = genre
     @@genres << genre
-    @@genre_count[genre] += 1 
+    
     @@count += 1
   end 
 
@@ -34,12 +33,15 @@ def self.genres
 end 
 
 def self.genre_count
-@@genre_count
+  binding.pry
+@@genres
+@@genre_count[genre] += 1 
 end
 
 
 def self.artist_count
-@@artist_count
+@@artists
+@@artist_count[artist] += 1
 end
 
 end 
